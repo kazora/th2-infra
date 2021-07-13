@@ -1,0 +1,12 @@
+chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+ingress.host: {{ default "is not set" .Values.ingress.host }}
+productRegistry.name: {{ default "is not set" .Values.productRegistry.name }}
+solutionRegistry.name: {{ default "is not set" .Values.solutionRegistry.name }}
+proprietaryRegistry: {{ default "is not set" .Values.proprietaryRegistry }}
+infraEditor.image: {{ .Values.infraEditor.image.repository }}:{{ .Values.infraEditor.image.tag }}
+infraRepo.image: {{ .Values.infraRepo.image.repository }}:{{ .Values.infraRepo.image.tag }}
+infraOperator.image: {{ .Values.infraOperator.image.repository }}:{{ .Values.infraOperator.image.tag }}
+infraOperator.config.chart: {{ .Values.infraOperator.config.chart.repository }}:{{ .Values.infraOperator.config.chart.version }}
+infraMgr.git.repository: {{.Values.infraMgr.git.repository }}
+infraMgr.image.repository: {{.Values.infraMgr.image.repository }}:{{ .Values.infraMgr.image.tag }}
+externalRabbitMQHost: {{ .Values.externalRabbitMQHost.host }}
